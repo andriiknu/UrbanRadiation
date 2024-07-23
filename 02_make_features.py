@@ -13,9 +13,9 @@ from tqdm import tqdm
 
 # bash train.sh /data/training/ /data/trainingAnswers.csv
 ########################################################################################################################
-train_folder = '/data/training/'
-train_answr = '/data/trainingAnswers.csv'
-wdata_dir = '/wdata/'
+train_folder = './data/training/'
+train_answr = './data/trainingAnswers.csv'
+wdata_dir = './wdata/'
 if len(sys.argv) > 1:
     train_folder = sys.argv[1]
     train_answr = sys.argv[2]
@@ -123,8 +123,8 @@ for i, id in enumerate(tqdm(train_ids)):
          ratio21, ratio22, ratio23, ratio24, ratio25, ratio26, ratio27, ratio28, ratio29, ratio30]).T
 
     # ===================================================================================================================
-    np_id = np.expand_dims(id, axis=1)
-    np_target = np.expand_dims(target_df.SourceID[i], axis=1)
+    np_id = np.array([id])
+    np_target = np.array([target_df.SourceID[i]])
 
     np_id_counts_target = np.concatenate([np_id, np_counts, np_counts_peaks, np_ratio_peaks, np_target], axis=0)
     train_bin.append(np_id_counts_target)

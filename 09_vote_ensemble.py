@@ -13,9 +13,9 @@ import sys
 #=======================================================================================================================
 # bash test.sh /data/testing/ solution.csv
 
-test_folder = '/data/testing/'
+test_folder = './data/testing/'
 solution_fn = 'solution.csv'
-wdata_dir = '/wdata/'
+wdata_dir = './wdata/'
 if len(sys.argv) > 1:
     test_folder = sys.argv[1]
     solution_fn = sys.argv[2]

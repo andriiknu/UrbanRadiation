@@ -8,9 +8,6 @@
 
 import os
 import sys
-os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
-os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
-
 from collections import Counter
 import pandas as pd
 import numpy as np
@@ -32,9 +29,9 @@ except BaseException:
 #=======================================================================================================================
 #  bash test.sh /data/testing/ solution.csv
 ########################################################################################################################
-test_folder = '/data/testing/'
+test_folder = './data/testing/'
 solution_fn = 'solution.csv'
-wdata_dir = '/wdata/'
+wdata_dir = './wdata/'
 if len(sys.argv) > 1:
     test_folder = sys.argv[1]
     solution_fn = sys.argv[2]
@@ -239,7 +236,7 @@ for i, id in enumerate(tqdm(files)):
     _idxs = f(num_windows, length)  # 200 slices
 
     # find 30 sec index
-    df_sort = df.ix[(df['time_cumsum'] - 30000000).abs().argsort()[:2]]
+    df_sort = df.loc[(df['time_cumsum'] - 30000000).abs().argsort()[:2]]
     idx30 = df_sort.index.tolist()[0]
     seg_idxs = [k for k in _idxs if k >= idx30]
 

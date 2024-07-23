@@ -120,11 +120,11 @@ def work(arg):
         if seg_width > 20000: seg_width = 20000
         if seg_width < 1000: seg_width = 1000
         # find 30 sec index
-        df_sort = df.ix[(df['time_cumsum'] - 30000000).abs().argsort()[:2]]
+        df_sort = df.loc[(df['time_cumsum'] - 30000000).abs().argsort()[:2]]
         idx30 = df_sort.index.tolist()[0]
 
         # find apprx time index
-        df_sort_apprx = df.ix[(df['time_cumsum'] - apprx_time*1000000).abs().argsort()[:2]]
+        df_sort_apprx = df.loc[(df['time_cumsum'] - apprx_time*1000000).abs().argsort()[:2]]
         idx_apprx = df_sort_apprx.index.tolist()[0]
         #===================================================================
 
@@ -187,9 +187,9 @@ def work(arg):
 #=======================================================================================================================
 # bash test.sh /data/testing/ solution.csv
 
-test_folder = '/data/testing/'
+test_folder = './data/testing/'
 solution_fn = 'solution.csv'
-wdata_dir = '/wdata/'
+wdata_dir = './wdata/'
 if len(sys.argv) > 1:
     test_folder = sys.argv[1]
     solution_fn = sys.argv[2]

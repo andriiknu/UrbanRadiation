@@ -24,9 +24,9 @@ import os
 
 ########################################################################################################################
 expt_name = 'ANN_CNN'
-train_folder = '/data/training/'
-train_answr = '/data/trainingAnswers.csv'
-wdata_dir = '/wdata/'
+train_folder = './data/training/'
+train_answr = './data/trainingAnswers.csv'
+wdata_dir = './wdata/'
 if len(sys.argv) > 1:
     train_folder = sys.argv[1]
     train_answr = sys.argv[2]

@@ -6,6 +6,8 @@
 #=======================================================================================================================
 
 import sys
+WORK_DIR = 'F:\UrbanRadiation'
+sys.path.append(WORK_DIR)
 from pre_process import make_features
 
 

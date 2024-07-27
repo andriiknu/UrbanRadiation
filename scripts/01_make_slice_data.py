@@ -5,7 +5,10 @@
 # For data with source, 7 nearest windows from source were generated.
 # @ Shaikat Galib / smg478@mst.edu / 25/04/2019
 #=======================================================================================================================
+
 import sys
+WORK_DIR = 'F:\UrbanRadiation'
+sys.path.append(WORK_DIR)
 from pre_process import make_slice_data
 
 ########################################################################################################################

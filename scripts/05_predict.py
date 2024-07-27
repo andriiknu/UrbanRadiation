@@ -1,4 +1,6 @@
 import sys
+WORK_DIR = 'F:\UrbanRadiation'
+sys.path.append(WORK_DIR)
 from main_funcs import predict_3tta
 
 #=======================================================================================================================

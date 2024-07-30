@@ -83,9 +83,9 @@ def train(expt_name, wdata_dir, random_seed=203):
         os.makedirs(log_dir)
 
     callbacks = [
-        EarlyStopping(monitor='accuracy', patience=20, verbose=2, min_delta=1e-4, mode='max'),
-        ReduceLROnPlateau(monitor='accuracy', factor=0.5, patience=5, cooldown=2, verbose=1, min_delta=1e-4, mode='max'),
-        ModelCheckpoint(monitor='accuracy', filepath=weight_dir + 'model.hdf5', save_best_only=True, save_weights_only=False, mode='max'  ),
+        EarlyStopping(monitor='acc', patience=20, verbose=2, min_delta=1e-4, mode='max'),
+        ReduceLROnPlateau(monitor='acc', factor=0.5, patience=5, cooldown=2, verbose=1, min_delta=1e-4, mode='max'),
+        ModelCheckpoint(monitor='acc', filepath=weight_dir + 'model.hdf5', save_best_only=True, save_weights_only=False, mode='max'  ),
         TensorBoard(log_dir=log_dir)
     ]
     
